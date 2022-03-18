@@ -39,6 +39,11 @@
         <!--加载mybatis核心文件-->
         <property name="configLocation" value="classpath:sqlMapConfig-spring.xml"/>
     </bean>
+  <!--  <bean id="sqlsessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        &lt;!&ndash;加载mybatis核心文件&ndash;&gt;
+        <property name="configLocation" value="classpath:sqlMapConfig-spring.xml"/>
+    </bean>-->
     <!--扫描mapper所在的包 为mapper创建实现类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="jxnu.edu.cn.dao"/>
