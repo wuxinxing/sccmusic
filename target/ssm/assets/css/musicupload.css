@@ -1,0 +1,200 @@
+
+/* 新版界面 */
+
+@font-face {
+	font-family: 'iconfont';  /* Project id 3241695 */
+	src: url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.woff2?t=1647079389057') format('woff2'),
+	url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.woff?t=1647079389057') format('woff'),
+	url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.ttf?t=1647079389057') format('truetype');
+}
+
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 5px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shanchu2:before {
+	content: "\e600";
+}
+
+.iconbtn{
+	background-color: white;
+	border: white;
+}
+
+.downloadicon:hover{
+	color: rgb(0,161,214);
+	cursor:pointer;
+}
+
+.newalbum-box{
+	display: none;
+}
+
+
+.info-box{
+	margin-left: 50px;
+	margin-top: 30px;
+	padding-top: 50px;
+	width: 350px;
+	height: 670px;
+	float: left;
+}
+.info-box label{
+	float: left;
+}
+.info-item{
+	margin-top: 30px;
+}
+.info-box input{
+	border-radius: 3px;
+	height: 25px;
+	width: 220px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+textarea {
+	resize: none;
+	width: 250px;
+	height: 100px;
+	border-radius: 3px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+.btn2{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	width: 150px;
+}
+#album,#musictype{
+	border-radius: 3px;
+	height: 25px;
+	width: 150px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+.newalbumbtn{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	float: right;
+}
+
+.deletealbum{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	float: right;
+	margin-top: 10px;
+	margin-left: 200px;
+}
+.upload-area{
+	padding-top: 100px;
+	margin-top: 30px;
+	margin-left:550px;
+}
+.musicpicupload{
+	margin-top: 20px;
+}
+.mvupload{
+	margin-top: 20px;
+}
+.tip{
+	font-size: 10px;
+	color: #999999;
+}
+.upload-area input{
+	position: absolute;
+	height: 30px;
+	width: 150px;
+	opacity: 0;
+}
+.submitbtn{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	margin-top: 150px;
+	margin-bottom: 100px;
+	margin-left: 400px;
+}
+.albumbtn{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: 400px;
+}
+.albumpicupload{
+	margin-top: 100px;
+}
+.alert {
+	display:none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 200px;
+	/*margin-left: -100px;*/
+	z-index: 99999;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.alert-success {
+	color: #FFFFFF;
+	background-color: #333333;
+	border-color: #333333;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.upload-btn{
+	width: 300px;
+	height: 30px;
+}
+
+.music-resourse{
+	top: 132px;
+    left: 720px;
+	font-size: 12px;
+	position: absolute;
+	color:#808080;
+}
+.musicpic-resourse{
+	top: 207px;
+    left: 720px;
+	font-size: 12px;
+	position: absolute;
+	color:#808080;
+}
+.mv-resourse{
+	top: 282px;
+    left: 720px;
+	font-size: 12px;
+	position: absolute;
+	color:#808080;
+}
+

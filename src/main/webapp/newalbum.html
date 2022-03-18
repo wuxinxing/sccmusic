@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/buttons.css">
+		<link rel="stylesheet" href="assets/css/musicupload.css">
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/album/album.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li class="active"><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+						<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+						<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+						<li><a href="login.html" class="nav-noneuser">登录</a></li>
+						<li><a href="reg.html" class="nav-noneuser">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container-sm box newalbum-box">
+			<div class="info-box">
+				<div class="info-item">
+				    <label class="label-name" >专辑名称：</label>
+				    <div >
+				        <input type="text" class="name-input" name=albumname id="albumname" placeholder="请输入专辑名称">
+				    </div>
+					</div>
+					<div class="info-item">
+					    <label class="label-name" >专辑介绍：</label>
+					    <div >
+					        <textarea name=albumintro id="albumintro" placeholder="专辑介绍"></textarea>
+					    </div>
+					</div>
+			</div>
+			<div class="upload-area">
+			<div class="albumpicupload">
+				<div>
+					<div>
+					<input type="file" name="albumpic" id="uploadalbum" accept="image/*" />
+					<button type="button" class="btn2 button button-block button-rounded button-small">上传专辑封面</button>
+					</div>
+					<span class="tip">选择图片上传</span>
+				</div>
+			</div>
+			</div>
+			<button type="button" id="albumsubmit" class="albumbtn button button-block button-rounded button-normal">提交</button>
+		</div>
+	</body>
+</html>

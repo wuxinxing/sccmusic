@@ -1,0 +1,183 @@
+.music-search{
+	margin-left:25%;
+	margin-top: 20px;
+}
+
+.music-search-input{
+	padding:  4px 1px 4px 15px;
+	outline: none;
+	border: 2px solid #e0e0e0;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	width: 400px;
+	height: 25px;
+	float: left;
+}
+
+.ul-music-search{
+	padding: 4px 1px 4px 15px;
+	border: 2px solid #e0e0e0;
+	outline: none;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	width: 30px;
+	height: 25px;
+	float: left;
+}
+
+.search-point{
+	font-size: 12px;
+	color:#808080;
+	margin-left: 35px;
+}
+.search-point-keyword{
+	font-size: 12px;
+	color: #B72712;
+}
+.search-point-songsnumber{
+	font-size: 12px;
+	color: #B72712;
+}
+
+.info-nav{
+	margin-top: 20px;
+	margin-left: 35px;
+}
+
+.info-nav > a{
+	position: relative;
+	float: left;
+	font-size: 15px;
+	letter-spacing: 0px;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	width: 10%;
+	text-align: center;
+	height: 35px;
+}
+
+.info-nav >a>ul {
+	padding: 1px 2px 1px 2px;
+	height: 100%;
+	display: block;
+	font-size: 15px;
+	letter-spacing: 1px;
+	transition: height .2s ease-out;
+}
+.info-nav >a:hover>ul{
+	color: #B72712;
+	opacity: 1;
+	height: 35px;
+}
+.info-nav>.active {
+	color: #B72712;
+	height: 35px;
+	border-top: 2px solid #B72712;
+	background-color:#f5f5f5;
+
+}
+.search-songs{
+	margin-top:30px;
+	margin-left: 35px;
+	width: 95%;
+	clear: both;
+}
+
+.songs-nav{
+	overflow: auto;
+    float: left;
+	width:100%;
+	line-height: 35px;
+}
+.songs-nav:hover{
+	border: 1px solid #808080;
+	background-color:#a9a9a9;
+}
+.song-name{
+	font-size: 13px;
+	padding-left: 20px;
+	width: 30%;
+	height: 35px;
+	float: left;
+}
+
+.song-button{
+    text-align: center;
+	width: 20%;
+	height: 35px;
+	float: left;
+}
+
+#buttons{
+	display: none;
+}
+
+.iconbtn{
+	background-color:#a9a9a9;
+	border: #a9a9a9;
+}
+
+
+.song-singer{
+	text-align: center;
+	font-size: 12px;
+	width: 10%;
+	height: 35px;
+	float: left;
+}
+.song-album{
+	font-size: 13px;
+   text-align: center;
+	width: 20%;
+	height: 35px;
+	float: left;
+}
+.song-time{
+	text-align: center;
+	font-size: 12px;
+	width: 5%;
+	height: 35px;
+	float: left;
+}
+.search-singers{
+	display: none;
+	margin-top: 30px;
+	margin-left: 35px;
+	width: 100%;
+	clear: both;
+}
+
+.search-singers>li{
+	margin-top: 20px;
+	margin-right: 30px;
+	width: 140px;
+	height: 180px;
+	float: left;
+}
+
+.singer-pic{
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	position: relative;
+}
+.singer-name{
+	text-align: center;
+	margin: 8px 0 3px 0;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.pages{
+	text-align: center;
+	margin-top: 120px;
+}
+.pages p{
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+	clear: both;
+}
+
+

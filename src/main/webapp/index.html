@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/common.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/index.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li class="active"><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+						<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+						<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+						<li><a href="login.html" class="nav-noneuser" style="display: none">登录</a></li>
+						<li><a href="reg.html" class="nav-noneuser" style="display: none">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- 轮播图 -->
+		<div class="container-sm slider-wrap">
+			<div class="slider">
+				<div class="slider-item-list"></div>
+				<div class="slider-dots">
+					<div class="slider-dots-wrap"></div>
+				</div>
+				<div class="slider-arrows">
+					<div class="slider-arrows-wrap">
+						<span class="slider-arrow slider-arrow-left" onclick="HBSlider.turn(-1)"></span>
+						<span class="slider-arrow slider-arrow-right" onclick="HBSlider.turn(1)"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 主内容区域 -->
+		<div class="container-sm box">
+			<!-- 主内容 -->
+			<div class="main">
+				<div class="main-wrap">
+					<div class="content-box">
+						<!-- 热门推荐 -->
+						<div class="hot-recommand">
+							<div class="content-header">
+								<h2><i class="fa fa-music red"></i>单曲推荐</h2>
+								<span class="more recommore"><a href="more.html?more=hot-recommand">更多</a></span>
+							</div>
+							<ul class="music-list clearfix recomsong">
+								<li>
+									<div class="u-cover">
+										<img src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+								<li>
+									<div class="u-cover">
+										<img
+											src="storage/images/18277181788626198.jpg">
+										<a title="Faded - Alan Walker" href="music/36990266.html" class="msk"></a>
+									</div>
+									<p class="dec">
+										<a title="Faded - Alan Walker" href="music/36990266.html">Faded</a>
+									</p>
+									<div class="author">HaPBoy</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 分类榜单 -->
+						<div class="category">
+							<div class="content-header">
+								<h2><i class="fa fa-music red"></i>分类榜</h2>
+								<div class="tab">
+									<a href="more.html?more=rap">说唱</a>
+									<span class="line">|</span>
+									<a href="more.html?more=pop">流行</a>
+									<span class="line">|</span>
+									<a href="more.html?more=rock">摇滚</a>
+									<span class="line">|</span>
+									<a href="more.html?more=folk">民谣</a>
+									<span class="line">|</span>
+									<a href="more.html?more=edm">电子</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="category-music-list">
+									<div class="category-header">
+										说唱
+									</div>
+									<ul class="rap-rank">
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">1</span>
+													<a href="#" title="秒速五厘米">秒速五厘米</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-23</span>
+												<span class="avatar"><img src="storage/avatar/12.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">2</span>
+													<a href="#" title="白詰草">白詰草</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">2021-11-12</span>
+												<span class="avatar"><img src="storage/avatar/1.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">3</span>
+													<a href="./music/761323.html" title="鸟の诗 ~">鸟の诗 ~</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-26</span>
+												<span class="avatar"><img src="storage/avatar/4.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">4</span>
+													<a href="#" title="桜花抄">桜花抄</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-25</span>
+												<span class="avatar"><img src="storage/avatar/17.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">5</span>
+													<a href="#" title="人生的回转木马">人生的回转木马</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">2021-11-12</span>
+												<span class="avatar"><img src="storage/avatar/9.jpg"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="category-music-list">
+									<div class="category-header">
+										流行
+									</div>
+									<ul class="pop-rank">
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">1</span>
+													<a href="#" title="Because of You">If We Have Each Other</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">2021-11-23</span>
+												<span class="avatar"><img src="storage/avatar/17.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">2</span>
+													<a href="#" title="Easy Breeze">Easy
+														Breeze</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-12</span>
+												<span class="avatar"><img src="storage/avatar/14.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">3</span>
+													<a href="#" title="Levels - Radio Edit">Levels
+														- Radio Edit</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">2021-11-12</span>
+												<span class="avatar"><img src="storage/avatar/5.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">4</span>
+													<a href="#" title="Remember">Remember</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-25</span>
+												<span class="avatar"><img src="storage/avatar/2.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">5</span>
+													<a href="#" title="Faded">Faded</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-24</span>
+												<span class="avatar"><img src="storage/avatar/10.jpg"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="category-music-list">
+									<div class="category-header">
+										民谣
+									</div>
+									<ul class="folk-rank">
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">1</span>
+													<a href="#" title="秒速五厘米">秒速五厘米</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-23</span>
+												<span class="avatar"><img src="storage/avatar/12.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">2</span>
+													<a href="#" title="白詰草">白詰草</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-14</span>
+												<span class="avatar"><img src="storage/avatar/1.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">3</span>
+													<a href="#" title="鸟の诗 ~">鸟の诗 ~</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-26</span>
+												<span class="avatar"><img src="storage/avatar/4.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">4</span>
+													<a href="#" title="桜花抄">桜花抄</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-25</span>
+												<span class="avatar"><img src="storage/avatar/17.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">5</span>
+													<a href="./music/442454.html" title="人生的回转木马">人生的回转木马</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-17</span>
+												<span class="avatar"><img src="storage/avatar/9.jpg"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="category-music-list">
+									<div class="category-header">
+										电子
+									</div>
+									<ul class="edm-rank">
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">1</span>
+													<a href="#" title="Because of You">Because of
+														You</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-23</span>
+												<span class="avatar"><img src="storage/avatar/17.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">2</span>
+													<a href="#" title="Easy Breeze">Easy
+														Breeze</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-12</span>
+												<span class="avatar"><img src="storage/avatar/14.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">3</span>
+													<a href="#" title="Levels - Radio Edit">Levels
+														- Radio Edit</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-13</span>
+												<span class="avatar"><img src="storage/avatar/5.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">4</span>
+													<a href="#" title="Remember">Remember</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">11-25</span>
+												<span class="avatar"><img src="storage/avatar/2.jpg"></span>
+											</div>
+										</li>
+										<li class="music-list-item">
+											<div class="title">
+												<div class="title_wrap">
+													<span class="rank">5</span>
+													<a href="#" title="Faded">Faded</a>
+												</div>
+											</div>
+											<div class="info">
+												<span class="date">12-24</span>
+												<span class="avatar"><img src="storage/avatar/10.jpg"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 侧边栏 -->
+			<div class="sidebar" style="min-height: 1094px">
+				<div class="right-module">
+					<h4>最新单曲</h4>
+					<ul class="new-artist-songs newsongs">
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/0.jpg">
+							</div>
+							<div class="info">
+								<h3>Refrain</h3>
+								<p>HaPBoy / <span>1595</span>次播放</p>
+							</div>
+							<a href="#" title="Refrain" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/4.jpg">
+							</div>
+							<div class="info">
+								<h3>A Little Story</h3>
+								<p>LoveMiao / <span>1052</span>次播放</p>
+							</div>
+							<a href="#" title="A Little Story" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/3.jpg">
+							</div>
+							<div class="info">
+								<h3>晴れ 时どき 雪</h3>
+								<p>Annie雀 / <span>349</span>次播放</p>
+							</div>
+							<a href="#" title="晴れ 时どき 雪" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/14.jpg">
+							</div>
+							<div class="info">
+								<h3>Easy Breeze</h3>
+								<p>Hannah / <span>420</span>次播放</p>
+							</div>
+							<a href="#" title="Easy Breeze" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/5.jpg">
+							</div>
+							<div class="info">
+								<h3>安静的午后</h3>
+								<p>Wing / <span>1356</span>次播放</p>
+							</div>
+							<a href="#" title="安静的午后" class="cover-link"></a>
+						</li>
+					</ul>
+				</div>
+				<div class="right-module">
+					<h4>热门单曲</h4>
+					<ul class="new-artist-songs hotsongs">
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/20.jpg">
+							</div>
+							<div class="info">
+								<h3>風の詩</h3>
+								<p>苗^v^ / <span>1167</span>次播放</p>
+							</div>
+							<a href="#" title="風の詩" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/0.jpg">
+							</div>
+							<div class="info">
+								<h3>Remember</h3>
+								<p>HaPBoy / <span>1008</span>次播放</p>
+							</div>
+							<a href="#" title="Remember" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/9.jpg">
+							</div>
+							<div class="info">
+								<h3>夜的钢琴曲五</h3>
+								<p>超级无敌帅气苗 / <span>864</span>次播放</p>
+							</div>
+							<a href="#" title="夜的钢琴曲五" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/00.jpg">
+							</div>
+							<div class="info">
+								<h3>奇迹の山</h3>
+								<p>Hapon / <span>838</span>次播放</p>
+							</div>
+							<a href="#" title="奇迹の山" class="cover-link"></a>
+						</li>
+						<li class="artist-song">
+							<div class="avatar">
+								<img src="storage/avatar/17.jpg">
+							</div>
+							<div class="info">
+								<h3>Because of You</h3>
+								<p>Octobse_Idy / <span>821</span>次播放</p>
+							</div>
+							<a href="#" title="Because of You" class="cover-link"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 底部版权 -->
+		<footer>
+			<div class="container">
+				<div class="copyright">
+					<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+		<!-- JS 脚本 -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/HBSlider.js"></script>
+		<script>
+			// 轮播图数据
+			var sliderData = [{
+					title: '晴れ 时どき 雪',
+					pic: './storage/slider/01.png',
+					url: '#'
+				},
+				{
+					title: 'Flower Dance',
+					pic: './storage/slider/02.png',
+					url: '#'
+				},
+				{
+					title: 'A Little Story - Valentin',
+					pic: './storage/slider/03.png',
+					url: '#'
+				},
+				{
+					title: '桜花抄 - 天門',
+					pic: './storage/slider/04.png',
+					url: '#'
+				}
+			];
+
+			$(function() {
+				HBSlider.setConfig({
+					autoPlay: true,
+					delay: 5
+				});
+				HBSlider.setItems(sliderData);
+				HBSlider.init();
+				HBSlider.play();
+			});
+		</script>
+	</body>
+</html>

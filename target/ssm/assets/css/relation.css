@@ -1,0 +1,193 @@
+.headimg {
+	width: 180px;
+	height: 180px;
+	margin-top: 30px;
+	margin-left: 30px;
+	border: 1px solid #B2B2B2;
+	float: left;
+}
+.headimg img{
+	width: 180px;
+	height: 180px;
+	
+}
+.my-info .btn1{
+	margin-right: 100px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	float: right;
+	color: #000000;
+	font-weight: 500;
+}
+.my-info {
+	padding: 10px;
+	border-bottom: 2px solid #dddddd;
+}
+.my-list {
+	margin-top: 10px ;
+}
+.my-list .list-content {
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+}
+.my-current{
+	float: left;
+	width: 70px;
+	height: 50px;
+	border-left:1px solid white;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+}
+.my-fans {
+	float: left;
+	width: 70px;
+	height: 50px;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	border-left: 1px solid #dddddd;
+	text-align: center;
+}
+.my-follow {
+	float: left;
+	width: 70px;
+	height: 50px;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	border-left: 1px solid #dddddd;
+	text-align: center;
+}
+.my-list > li> a:hover > div,.my-list > li> a:hover > div >span{
+	color: #4baaff;
+}
+.my-intro {
+	margin-top:10px ;
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+}
+.my-thing {
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 60px;
+}
+.my-content-box{
+	margin-left: 470px;
+	width: 700px;
+}
+#my_nickname {
+	font-size: 25px;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+}
+#my_sex {
+	font-size: 20px;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	margin-left: 20px;
+}
+.my-content {
+	margin-top: 40px;
+	margin-left: 260px;
+}
+
+.relation-list{
+	
+}
+.relation-list .list-headimg{
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.list-headimg img{
+	width: 80px;
+	height: 80px;
+}
+.relation-list li{
+	height: 120px;
+}
+.bg{
+	background-color: #fafafa;
+}
+.relation-list .info{
+	float: left;
+	font-size: 10px;
+	margin-left: 30px;
+	height: 115px;
+	margin-top: 1px;
+}
+.relation-list .info .info-username{
+	margin-left: 12px;
+	font-size:18px;
+	margin-top: 20px;
+}
+.relation-list .info .info-username a{
+	color: #0C73C2;
+}
+.info-box{
+	height: 30px;
+	margin-top: 15px;
+	width: 300px;
+}
+.relation-list .info .songs{
+	float: left;
+	margin-left: 10px;
+	
+}
+.relation-list .info .userfollow{
+	float: left;
+	border-left:1px solid #dddddd;
+	margin-left: 20px;
+	padding-left: 30px;
+}
+.relation-list .info .userfans{
+	float: left;
+	border-left:1px solid #dddddd;
+	margin-left: 20px;
+	padding-left: 30px;
+}
+.relation-list .info p{
+	margin-left: 10px;
+	overflow: hidden;
+	width: 300px;
+	height: 30px;
+	
+}
+.btn2{
+	float: right;
+	margin-right: 100px;
+	margin-top: 40px;
+	color: #000000;
+	font-weight: 500;
+}
+.alert {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 200px;
+
+	z-index: 99999;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.alert-success {
+	color: #FFFFFF;
+	background-color: #333333;
+	border-color: #333333;
+}
+.pages{
+	text-align: center;
+}
+.pages p{
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+}

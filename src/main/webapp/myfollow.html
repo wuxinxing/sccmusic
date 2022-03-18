@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>SccMusic </title>
+	<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/common.css">
+	<link rel="stylesheet" href="assets/css/slider.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/buttons.css">
+	<link rel="stylesheet" href="assets/css/relation.css">
+	<link rel="stylesheet" href="assets/css/pages.css">
+	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	 <script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/follow.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/plugins/jq-paginator.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<!-- 导航栏 -->
+<header>
+	<div class="container">
+		<div class="navbar-header">
+			<a href="" class="navbar-brand">
+				<img src="assets/images/logo.png" alt="">
+			</a>
+		</div>
+		<nav>
+			<ul class="nav navbar-nav navbar-link">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="mymusic.html">我的音乐</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right navbar-sm">
+				<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+				<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+				<li><a href="musicupload.html">上传</a></li>
+				<li class="active"><a href="my.html">个人中心</a></li>
+				<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+				<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+				<li><a href="login.html" class="nav-noneuser" style="display: none">登录</a></li>
+				<li><a href="reg.html" class="nav-noneuser" style="display: none">注册</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div class="container-sm box">
+	<div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+	<div class="headimg">
+		<img src="user-images/109951163326451516.jpg" id="headimg">
+	</div>
+	<div class="my-content">
+		<div class="my-info">
+				<span  id="my_nickname">
+					zeroscc
+				</span>
+			<span id="my_sex" >
+					男
+				</span>
+			<a href="myupdate.html"><button type="button" class="edit btn1 button button-block button-rounded button-small">编辑个人资料</button></a>
+			<a href="#" class="follow" style="display: none;"><button type="button" class=" btn1 button button-block button-rounded button-small">关注</button></a>
+			<a href="#" class="un-follow" style="display: none;"><button type="button" class=" btn1 button button-block button-rounded button-small">取消关注</button></a>
+		</div>
+		<ul class="my-list">
+			<li>
+				<div class="my-current">
+					<span class="number">0</span>
+					<br>
+					<span class="list-content">
+							作品
+						</span>
+				</div>
+			</li>
+			<li>
+				<a href="#" class="fanshref"><div class="my-fans">
+					<span class="number">0</span>
+					<br>
+					<span class="list-content">
+							粉丝
+						</span>
+				</div></a>
+			</li>
+			<li>
+				<a href="#" class="followhref"><div class="my-follow">
+					<span class="number">0</span>
+					<br>
+					<span class="list-content">
+							关注
+						</span>
+				</div></a>
+			</li>
+		</ul>
+		<br><br>
+		<div class="my-intro">
+					<span class="intro-span">
+						个人介绍：
+					</span>
+			<span class="intro-content" id="my_introduce">
+						cheers
+					</span>
+			<br>
+			<span class="intro-area">
+						所在地区：
+					</span>
+			<span class="intro-content" id="my_address">
+						江西省 - 上饶市
+					</span>
+			<span class="intro-age">
+						年龄：
+					</span>
+			<span class="intro-content"  id="my_age">
+						20
+					</span>
+		</div>
+	</div>
+	<div class="relation-area my-thing">
+		<div class="content-header">
+			<h2><i class="fa fa-music red"></i>关注</h2>
+		</div>
+		<div>
+			<ul class="relation-list">
+
+			</ul>
+		</div>
+	</div>
+	<div class="pages">
+		<p>当前第 <span id="text"></span> 页</p>
+		<ul id="pagination" class="pagination"></ul>
+	</div>
+</div>
+
+<!-- 底部版权 -->
+<footer>
+	<div class="container">
+		<div class="copyright">
+			<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+		</div>
+	</div>
+</footer>
+<!-- JS 脚本 -->
+</body>
+</html>

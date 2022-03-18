@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="jxnu.edu.cn.dao.UserDao">
+  <sql id="findAll">select * from user</sql>
+    <select id="findUser" resultType="userdomain" parameterType="userdomain">
+        <include refid="findAll"></include>
+        <where>
+            <if test="userId!=0">and userId=#{userId}</if>
+            <if test="username!=null">and username=#{username}</if>
+            <if test="nickname!=null">and nickname=#{nickname}</if>
+            <if test="password!=null">and password=#{password}</if>
+            <if test="email!=null">and email=#{email}</if>
+            <if test="age!=null">and age=#{age}</if>
+            <if test="sex!=null">and sex=#{sex}</if>
+            <if test="birthday!=null">and birthday=#{birthday}</if>
+            <if test="headImage!=null">and headImage=#{headImage}</if>
+            <if test="userStatus!=null">and userStatus=#{userStatus}</if>
+            <if test="userTag!=null">and userTag=#{userTag}</if>
+            <if test="userIntro!=null">and userIntro=#{userIntro}</if>
+            <if test="userAddress!=null">and userAddress=#{userAddress}</if>
+            <if test="followed!=0">and followed=#{followed}</if>
+            <if test="fans!=0">and fans=#{fans}</if>
+            <if test="userMusic!=0">and userMusic=#{userMusic}</if>
+        </where>
+    </select>
+    <insert id="insertUser" parameterType="userdomain">
+        insert into user(username,password,email,headImage,nickname)
+        values(#{username},#{password},#{email},#{headImage},#{nickname})
+    </insert>
+    <update id="updateHeadImage" parameterType="userdomain">
+        update user set headImage=#{headImage} where userId=#{userId}
+    </update>
+   <update id="updateinformation" parameterType="userdomain">
+       update user set nickname=#{nickname},age=#{age},sex=#{sex},birthday=#{birthday},
+            userIntro=#{userIntro},userAddress=#{userAddress}  where userId=#{userId}
+    </update>
+    <update id="updatepwd" parameterType="userdomain">
+        update user set password=#{password} where userId=#{userId}
+    </update>
+    <select id="queryCountUserFollows" resultType="int" parameterType="long">
+        select followed from user where userId=#{userId}
+    </select>
+    <select id="queryCountUserFans" resultType="int" parameterType="long">
+        select fans from user where userId=#{userId}
+    </select>
+    <insert id="insertRelation" parameterType="relationdomain" useGeneratedKeys="true" keyProperty="relationId">
+        insert into relation(fromUserId,toUserId,rel,relationTime)
+        values(#{fromUserId},#{toUserId},#{rel},#{relationTime})
+    </insert>
+    <delete id="deleteRelation">
+        delete from relation where fromUserId=#{fromUserId} and toUserId=#{toUserId}
+    </delete>
+    <select id="queryIfFollowed" resultType="int">
+        select count(*) from relation where fromUserId=#{fromUserId} and toUserId=#{toUserId}
+    </select>
+    <update id="updateAddUserFollowed" parameterType="long">
+        update user set followed =followed+1 where userId=#{userId}
+    </update>
+    <update id="updateAddUserFans" parameterType="long">
+        update user set fans =fans+1 where userId=#{userId}
+    </update>
+    <update id="updateMinusUserFollowed" parameterType="long">
+        update user set followed =followed-1 where userId=#{userId}
+    </update>
+    <update id="updateMinusUserFans" parameterType="long">
+        update user set fans =fans-1 where userId=#{userId}
+    </update>
+    <update id="updateAddUserMusic" parameterType="long">
+        update user set userMusic=userMusic+1 where userId=#{userId}
+    </update>
+    <update id="updateMinusUserMusic" parameterType="long">
+        update user set userMusic=userMusic-1 where userId=#{userId}
+    </update>
+    <select id="queryUserFollowedUser" resultType="userdomain">
+        select * from followed_view where fromUserId=#{userId} limit #{index},#{pagesize}
+    </select>
+    <select id="queryUserFansUser" resultType="userdomain">
+        select * from fans_view where toUserId=#{userId} limit #{index},#{pagesize}
+    </select>
+</mapper>     
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="jxnu.edu.cn.dao.AlbumDao">
+    <insert id="addalbum" parameterType="albumDomain" useGeneratedKeys="true" keyProperty="albumId">
+    insert into album(albumName,albumIntroduce, albumCreaterId,albumCreatetime, albumPic)
+    values(#{albumName},#{albumIntroduce},#{albumCreaterId},#{albumCreatetime},#{albumPic})
+    </insert>
+    <select id="queryalbumById" resultType="albumdomain" parameterType="long">
+      SELECT * FROM album  WHERE albumCreaterId=#{userId} GROUP BY albumId
+    </select>
+    <update id="addalbumNumber" parameterType="long">
+        UPDATE album set albumNumber= albumNumber+1 WHERE albumId=#{albumId}
+    </update>
+    <delete id="deleteAlbum" parameterType="long">
+        delete from album where albumId=#{albumId}
+    </delete>
+</mapper>     
+

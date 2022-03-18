@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/music.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/search.css">
+		<link rel="stylesheet" href="assets/css/miniconfont.css">
+		<link rel="stylesheet" href="assets/css/pages.css">
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/common.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/index.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/search.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/plugins/jq-paginator.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li class="active"><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+						<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+						<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+						<li><a href="login.html" class="nav-noneuser" style="display: none">登录</a></li>
+						<li><a href="reg.html" class="nav-noneuser" style="display: none">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container-sm box">
+			<div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+			<div class="music-search">
+				<input type="text" class="music-search-input">
+				<a href="javascript:void (0)"><ul class="ul-music-search" id="ul-music-search"><i class="fa fa-search" aria-hidden="true"></i></ul></a>
+			</div>
+			<br><br>
+			<div class="search-point">搜索"<span class="search-point-keyword" id="search_keyword">灿</span>"，找到<span class="search-point-songsnumber" id="search_songsnumber">20</span><span id="search-point-lastword">首单曲</span></div>
+			<div class="search-nav">
+				<ul class="info-nav">
+					<a id="song-btn" class="active" href="#"><ul>单曲</ul></a>
+					<a id="singer-btn" href="#"><ul >歌手</ul></a>
+				</ul>
+			</div>
+			<div class="search-songs">
+				<div class="songs-nav">
+					<div class="song-name"><a href="#">荣耀枪王朱嗣灿</a></div>
+					<div class="song-button">
+						<div id="buttons">
+						<button type="button"  title="收藏" id="collect" class="iconbtn collectbutton"><span class="icon iconfont collecticon">&#xe66f;</span></button>
+						<button type="button" title="取消收藏" id="collected" class="iconbtn collectedbutton" style="display: none; color: red;"><span class="icon iconfont collectedicon">&#xe66f;</span></button>
+						<button type="button" title="添加到歌单" class="iconbtn addbutton"><span class="icon iconfont addicon">&#xe664;</span></button>
+						<button type="button" title="下载" id="download" class="iconbtn downloadbutton"><span class="icon iconfont downloadicon">&#xe666;</span></button>
+						</div>
+					</div>
+					<div class="song-singer"><a href="#">朱嗣灿</a></div>
+					<div class="song-album"><a href="#">《我什么都不会》</a></div>
+					<div class="song-time"><span>04:23</span></div>
+				</div>
+			</div>
+			<ul class="search-singers">
+			</ul>
+			<div class="pages">
+				<p>当前第 <span id="text"></span> 页</p>
+				<ul id="pagination" class="pagination"></ul>
+			</div>
+		</div>
+
+
+		<!-- 底部版权 -->
+		<footer>
+			<div class="container">
+				<div class="copyright">
+					<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,244 @@
+.info-nav{
+	line-height: 65px;
+}
+.info-nav > li{
+	position: relative;
+	float: left;
+	font-size: 10px;
+	letter-spacing: 0;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	width: 33.33%;
+	text-align: center;
+}
+.info-nav li{
+	overflow: hidden;
+	height: 65px;
+}
+.info-nav >li >a {
+	padding: 0 1.3em;
+	height: 100%;
+	display: block;
+	font-size: 14px;
+	color: #232323;
+	letter-spacing: 1px;
+	transition: height .2s ease-out;
+	border-bottom: 2px solid #00aaff;
+}
+.info-nav >li:hover>a{
+	color: #55aaff;
+	opacity: 1;
+	height: 63px;
+}
+.info-nav .active a{
+	color: #55aaff;
+	height: 63px;
+}
+.label-name{
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #333333;
+	float: left;
+}
+.info-box{
+	margin-top:80px ;
+	margin-left: 200px;
+	margin-bottom: 100px;
+	width: 500px;
+
+}
+.info-upbox{
+	width: 300px;
+	margin-top: 120px;
+}
+.info-item{
+	margin-top: 15px;
+	width: 250px;
+}
+.name-input{
+	border-radius: 3px;
+	height: 25px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+textarea{
+	resize: none;
+	width: 170px;
+	border-radius: 3px;
+	height: 100px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+.disrickt-item{
+	margin-top: 15px;
+	display: block;
+
+}
+#province{
+	width: 131px;
+	outline:none;
+}
+#county ,#citys{
+	outline: none;
+}
+#province,#county,#citys{
+	height: 25px;
+	border-radius: 3px;
+	border: 1px solid #cdcdcd;
+}
+.headimg-box{
+	margin-top:80px ;
+	margin-left: 0px;
+	margin-bottom: 100px;
+	width: 900px;
+	height: 500px;
+}
+.headimg-uploadbtn{
+	font-size: 12px;
+	color: #4b4b4b;
+	background-color: #f4f4f4;
+	font-weight: 500;
+	width: 135px;
+	height: 35px;
+	font-size: 10px;
+	letter-spacing: 1px;
+	border: 1px solid #c4c4c4;
+	border-radius: 3px;
+}
+.up-tips{
+	font-size: 10px;
+	color: #999999;
+	margin-top: 15px;
+	margin-left: 150px;
+	float: left;
+}
+.headimgbtn-area{
+	height: 35px;
+	width: 135px;
+	margin-left: 150px;
+	margin-top: 10px;
+}
+.headimgbtn-area input{
+	position: absolute;
+	height: 35px;
+	width: 135px;
+	opacity: 0;
+}
+.uparea-left{
+	height: 350px;
+	width: 380px;
+	margin-top: 20px;
+	margin-left: 150px;
+	border-right: 1px solid #d1d1d1;
+	float: left;
+	clear:both;
+}
+.uparea-left img{
+	border: 1px solid #d1d1d1;
+	width: 380px;
+	height: 350px;
+}
+.uparea-right{
+	width: 300px;
+	height: 300px;
+	margin-top: 20px;
+	margin-left: 50px;
+	float: left;
+}
+.uparea-right img{
+	margin-top: 20px;
+	width: 180px;
+	height: 180px;
+	border: 1px solid #B2B2B2;
+}
+
+.head-btn{
+	position: absolute;
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	top: 550px;
+	left: 450px;
+}
+.pwd-box{
+	margin: auto;
+	margin-top:120px;
+	padding-bottom: 15px;
+	align-items: center;
+	margin-bottom: 100px;
+	width: 450px;
+	height: 250px;
+}
+#pwd-form{
+	border-radius:5px ;
+	height: 250px;
+	padding-top: 20px;
+}
+.pwd-item{
+	margin-left: 90px;
+	margin-top:15px;
+	width: 460px;
+}
+.pwd-item input{
+	border-radius: 3px;
+	height: 25px;
+	width: 220px;
+	border: 1px solid #cdcdcd;
+	outline: none;
+}
+.old_password{
+	margin-left: 12px;
+}
+
+.new_password{
+	margin-left: 12px;
+}
+
+
+.btn1{
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 190px;
+}
+.pwd-item >span{
+	font-size: 10px;
+}
+.alert {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 200px;
+	/*margin-left: -100px;*/
+	z-index: 99999;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.alert-success {
+	color: #FFFFFF;
+	background-color: #333333;
+	border-color: #333333;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}

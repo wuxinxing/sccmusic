@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Hey KONG </title>
+  <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/music.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/music.css">
+  <link rel="stylesheet" href="assets/css/iconfont.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/iconfont.js"></script>
+    <script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="assets/js/plugins/APlayer.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/music.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/comment.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/alert.js" type="text/javascript" charset="UTF-8"></script>
+
+</head>
+<body>
+<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li class="active"><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+                        <li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+                        <li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+                        <li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+                        <li><a href="login.html" class="nav-noneuser">登录</a></li>
+                        <li><a href="reg.html" class="nav-noneuser">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+</header>
+<div class="container-sm player-wrap">
+  <div id="music-player" class="aplayer"></div>
+</div>
+<div class="container-sm box">
+    <div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+    <div class="main">
+    <div class="main-wrap" >
+      <div class="content-box article" >
+        <div class="title">
+            <div class="opicon">
+              <button type="button" style="display: none"  title="删除" id="delete" class="iconbtn deletebutton"><span class="icon iconfont deleteicon" src="storage/avatar/delete.png">&#xe8b6;</span></button>
+              <button type="button"  title="收藏" id="collect" class="iconbtn collectbutton"><span class="icon iconfont collecticon">&#xe66f;</span></button>
+              <button type="button" title="取消收藏" id="collected" class="iconbtn collectedbutton" style="display: none; color: red;"><span class="icon iconfont collectedicon">&#xe66f;</span></button>
+              <button type="button" title="添加到歌单" class="iconbtn addbutton"><span class="icon iconfont addicon">&#xe664;</span></button>
+              <button type="button" title="下载" id="download" class="iconbtn downloadbutton"><span class="icon iconfont downloadicon">&#xe666;</span></button>
+			</div>
+          <h2>Hey KONG</h2>
+          <div class="info">
+            <span class="author">zeroscc</span> / <span class="date">2021-12-7</span>
+          </div>
+        </div>
+        <div class="content">
+          <p class="music-intro">
+
+          </p>
+        </div>
+		<div class="comment">
+		<div class="comment-send">
+			<div class="user-face">
+			<img src="user-images/109951163326451516.jpg" >
+			</div>
+		<textarea class="comment-textarea" placeholder="说点什么吧~" rows="3" cols="60" name="msg"></textarea>
+		<button type="submit" class="comment-submit button button-block button-small">发表评论</button>
+		</div>
+          <span class="comment-span">评论</span>
+		<div class="comment-list">
+		</div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="right-module">
+      <h4>最新单曲</h4>
+      <ul class="new-artist-songs newsongs">
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/0.jpg">
+          </div>
+          <div class="info">
+            <h3>Refrain</h3>
+            <p>HaPBoy / <span>1595</span>次播放</p>
+          </div>
+          <a href="music/22712173.html" title="Refrain" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/4.jpg">
+          </div>
+          <div class="info">
+            <h3>A Little Story</h3>
+            <p>LoveMiao / <span>1052</span>次播放</p>
+          </div>
+          <a href="music/857896.html" title="A Little Story" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/3.jpg">
+          </div>
+          <div class="info">
+            <h3>晴れ 时どき 雪</h3>
+            <p>Annie雀 / <span>349</span>次播放</p>
+          </div>
+          <a href="music/709386.html" title="晴れ 时どき 雪" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/14.jpg">
+          </div>
+          <div class="info">
+            <h3>Easy Breeze</h3>
+            <p>Hannah / <span>420</span>次播放</p>
+          </div>
+          <a href="music/29207817.html" title="Easy Breeze" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/5.jpg">
+          </div>
+          <div class="info">
+            <h3>安静的午后</h3>
+            <p>Wing / <span>1356</span>次播放</p>
+          </div>
+          <a href="music/139730.html" title="安静的午后" class="cover-link"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="right-module">
+      <h4>热门单曲</h4>
+      <ul class="new-artist-songs hotsongs">
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/20.jpg">
+          </div>
+          <div class="info">
+            <h3>風の詩</h3>
+            <p>苗^v^ / <span>1167</span>次播放</p>
+          </div>
+          <a href="music/22822602.html" title="風の詩" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/0.jpg">
+          </div>
+          <div class="info">
+            <h3>Remember</h3>
+            <p>HaPBoy / <span>1008</span>次播放</p>
+          </div>
+          <a href="music/2116537.html" title="Remember" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/9.jpg">
+          </div>
+          <div class="info">
+            <h3>夜的钢琴曲五</h3>
+            <p>超级无敌帅气苗 / <span>864</span>次播放</p>
+          </div>
+          <a href="music/149297.html" title="夜的钢琴曲五" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/00.jpg">
+          </div>
+          <div class="info">
+            <h3>奇迹の山</h3>
+            <p>Hapon / <span>838</span>次播放</p>
+          </div>
+          <a href="music/441552.html" title="奇迹の山" class="cover-link"></a>
+        </li>
+        <li class="artist-song">
+          <div class="avatar">
+            <img src="storage/avatar/17.jpg">
+          </div>
+          <div class="info">
+            <h3>Because of You</h3>
+            <p>Octobse_Idy / <span>821</span>次播放</p>
+          </div>
+          <a href="music/28828074.html" title="Because of You" class="cover-link"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="copyright">
+      <p align="center">Copyright © <span class="update-year">2016</span> HaPBoy - All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

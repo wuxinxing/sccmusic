@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="jxnu.edu.cn.dao.PlaySongDao">
+    <resultMap id="songMap" type="songdomain">
+        <id property="musicId" column="musicId"></id>
+        <result property="musicName" column="musicName"></result>
+        <result property="musicIntroduce" column="musicIntroduce"></result>
+        <result property="collectTimes" column="collectTimes"></result>
+        <result property="commentTimes" column="commentTimes"></result>
+        <result property="uploadTime" column="uploadTime"></result>
+        <result property="musicUploaderId" column="musicUploaderId"></result>
+        <result property="musicTypeId" column="musicTypeId"></result>
+        <result property="musicSource" column="musicSource"></result>
+        <result property="musicPic" column="musicPic"></result>
+        <result property="albumId" column="albumId"></result>
+        <result property="hasMv" column="hasMv"></result>
+        <result property="mvSource" column="mvSource"></result>
+        <result property="musicTag" column="musicTag"></result>
+        <result property="musicRights" column="musicRights"></result>
+        <result property="musicPlayedtimes" column="musicPlayedtimes"></result>
+        <result property="musicPlaybackTime" column="musicPlaybackTime"></result>
+        <association property="musicTypeDomain" javaType="musicTypeDomain">
+            <result property="musicType" column="musicType"></result>
+            <result property="musicNumber" column="musicNumber"></result>
+        </association>
+        <association property="userDomain" javaType="UserDomain">
+            <id property="userId" column="userId"></id>
+            <result property="username" column="username"></result>
+            <result property="nickname" column="nickname"></result>
+            <result property="headImage" column="headImage"></result>
+        </association>
+        <association property="albumDomain" javaType="AlbumDomain">
+            <result property="albumName" column="albumName"></result>
+            <result property="albumIntroduce" column="albumIntroduce"></result>
+            <result property="albumNumber" column="albumNumber"></result>
+            <result property="albumCreaterId" column="albumCreaterId"></result>
+            <result property="albumCreatetime" column="albumCreatetime"></result>
+            <result property="albumPic" column="albumPic"></result>
+        </association>
+    </resultMap>
+
+    <resultMap id="historyMap" type="HistoryDomain">
+        <id property="historyId" column="historyId"></id>
+        <result property="historyUserId" column="historyUserId"></result>
+        <result property="musicId" column="musicId"></result>
+        <result property="playTime" column="playTime"></result>
+        <association property="songDomain" javaType="songDomain">
+            <result property="musicName" column="musicName"></result>
+            <result property="musicPic" column="musicPic"></result>
+        </association>
+        <association property="userDomain" javaType="userDomain">
+            <id property="userId" column="userId"></id>
+            <result property="nickname" column="nickname"></result>
+            <result property="headImage" column="headImage"></result>
+        </association>
+    </resultMap>
+
+    <resultMap id="collectMap" type="CollectDomain">
+        <id property="" column=""></id>
+        <result property="" column=""></result>
+        <association property="userDomain" javaType="userDomain">
+            <id property="userId" column="userId"></id>
+            <result property="username" column="username"></result>
+            <result property="nickname" column="nickname"></result>
+        </association>
+        <association property="songDomain" javaType="songDomain">
+            <id property="musicId" column="musicId"></id>
+            <result property="musicName" column="musicName"></result>
+            <result property="musicPic" column="musicPic"></result>
+        </association>
+    </resultMap>
+
+    <select id="querySongByID" resultMap="songMap" parameterType="long">
+        select * from music_view where musicId=#{id}
+    </select>
+    <select id="querySongOrderById" resultMap="songMap">
+        select * from music_view order by musicId asc limit #{index},#{pagesize}
+    </select>
+    <select id="querySongOrderByPlayedTimes" resultMap="songMap">
+        select * from music_view order by musicPlayedtimes desc limit  #{index},#{pagesize}
+    </select>
+    <select id="querySongOrderByTime" resultMap="songMap">
+        select * from music_view order by uploadTime desc limit  #{index},#{pagesize}
+    </select>
+    <select id="querySongHistory" resultMap="historyMap">
+        select userId,musicName,musicId,musicPic,headImage,nickname,historyUserId from
+        history_view where historyUserId=#{userId} GROUP BY musicId order by MAX(playTime) desc limit #{index},#{pagesize}
+    </select>
+    <insert id="addHistory" parameterType="historydomain" useGeneratedKeys="true" keyProperty="historyId">
+        insert into musichistory(historyUserId,musicId,playTime) values(#{historyUserId},#{musicId},#{playTime})
+    </insert>
+    <update id="upadtePlaySongTimes" parameterType="long">
+        UPDATE music set musicPlayedtimes=musicPlayedtimes+1 WHERE musicId=#{id}
+    </update>
+    <select id="queryCollectBySongId" resultType="CollectDomain">
+        select * from collect where collectorUserId=#{userId} and collectMusicId=#{songId}
+    </select>
+    <insert id="addCollect" parameterType="collectdomain" useGeneratedKeys="true" keyProperty="collectId">
+        insert into collect(collectorUserId,collectMusicId,collectTime) values(#{collectorUserId},#{collectMusicId},#{collectTime})
+    </insert>
+    <update id="addCollecttimes" parameterType="long">
+        UPDATE music set collectTimes=collectTimes+1 WHERE musicId=#{songId}
+    </update>
+    <update id="minusCollecttimes" parameterType="long">
+        UPDATE music set collectTimes=collectTimes-1 WHERE musicId=#{songId}
+    </update>
+    <delete id="removeCollect">
+        delete from collect where collectorUserId=#{userId} and collectMusicId=#{songId}
+    </delete>
+    <select id="queryUserCollectedSong" resultMap="collectMap" >
+        select * from collect_view where collectorUserId=#{userId} order by collectTime desc limit #{index},#{pagesize}
+    </select>
+    <select id="queryUsersongs" resultMap="songMap" >
+        select * from music_view where musicUploaderId =#{userId} limit #{index},#{pagesize}
+    </select>
+    <select id="countRecomSongs" resultType="int">
+        select count(*) from music
+    </select>
+    <select id="countSongsByType" resultType="int" parameterType="string">
+        select count(*) from music_view where musicType=#{type}
+    </select>
+    <select id="countUserSongs" resultType="int" parameterType="long">
+        select count(*) from music_view where userId=#{userId}
+    </select>
+    <select id="countUserHistorys" resultType="int" parameterType="long">
+        SELECT count(*) from(select count(*)  from history_view   where userId=#{userId} GROUP BY musicId) a
+    </select>
+    <select id="countUserCollects" resultType="int" parameterType="long">
+        select count(*) from collect_view where userId=#{userId}
+    </select>
+    <select id="querySongsByType" resultMap="songMap">
+        select * from music_view where musicType=#{type} order by musicPlayedtimes limit #{index},#{pagesize}
+    </select>
+    <insert id="addmusic" parameterType="SongDomain" useGeneratedKeys="true" keyProperty="musicId">
+        insert into music(musicName,musicIntroduce,uploadTime,musicUploaderId,musicTypeId,albumId,
+        musicSource,musicPic,mvSource,musicPlaybackTime) values(#{musicName},#{musicIntroduce},#{uploadTime},
+     #{musicUploaderId},#{musicTypeId},#{albumId},#{musicSource},#{musicPic},#{mvSource},#{musicPlaybackTime})
+    </insert>
+    <select id="queryCountUserSongs" resultType="int" parameterType="long">
+        select count(*) from music where musicUploaderId=#{userId}
+    </select>
+    <select id="querySongsBySearchkey" resultMap="songMap">
+        select * from music_view where musicName like "%"#{searchkey}"%" limit #{index},#{pagesize}
+    </select>
+    <select id="countSearchsongs" resultType="int" parameterType="string">
+        select count(*) from music_view where musicName like "%"#{searchkey}"%"
+    </select>
+    <select id="countSearchsingers" resultType="int" parameterType="string">
+        SELECT COUNT(*) FROM (select nickname,count(*) from music_view GROUP BY userId)a   WHERE nickname like "%"#{searchkey}"%"
+    </select>
+    <select id="querySingersBySearchkey" resultType="UserDomain">
+        select userId,username,nickname,headImage from music_view where nickname like "%"#{searchkey}"%" GROUP BY userId limit #{index},#{pagesize}
+    </select>
+    <delete id="deleteSong" parameterType="long">
+        delete from music where musicId =#{musicId}
+    </delete>
+    <select id="queryIfUserOwnsSong" resultType="int">
+        select musicId from music where musicUploaderId=#{userId} and musicId=#{musicId}
+    </select>
+    <select id="countAlbumsongs" resultType="int" parameterType="long">
+        select count(*) from music_view where albumId=#{albumId}
+    </select>
+    <select id="querySongsByalbumId" resultMap="songMap">
+        select * from music_view where albumId=#{albumId} limit #{index},#{pagesize}
+    </select>
+
+</mapper>     
+

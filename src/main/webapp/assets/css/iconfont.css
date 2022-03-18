@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2992848 */
+  src: url('iconfont.woff2?t=1641259222309') format('woff2'),
+       url('iconfont.woff?t=1641259222309') format('woff'),
+       url('iconfont.ttf?t=1641259222309') format('truetype');
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 3241695 */
+  src: url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.woff2?t=1647079389057') format('woff2'),
+  url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.woff?t=1647079389057') format('woff'),
+  url('//at.alicdn.com/t/font_3241695_on0e5qjem5q.ttf?t=1647079389057') format('truetype');
+}
+
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shanchu:before {
+  content: "\e8b6";
+}
+
+.icon-bottom:before {
+  content: "\e666";
+}
+
+.icon-add-circle:before {
+  content: "\e664";
+}
+
+.icon-fabulous:before {
+  content: "\e66f";
+}
+
+.icon-good:before {
+  content: "\e673";
+}
+
+.icon-shanchu2:before {
+  content: "\e600";
+}
+

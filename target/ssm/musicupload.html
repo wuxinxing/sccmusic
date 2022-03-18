@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/buttons.css">
+		<link rel="stylesheet" href="assets/css/musicupload.css">
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/iconfont.js"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/song/uploadmusic.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/album/album.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/alert.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			$(function (){
+				$('.newalbumbtn').click(function (){
+					$('.musicupload-box').css("display","none");
+					$('.newalbum-box').css("display","block");
+					$('#albumname').val('');
+					$('#albumintro').val('');
+					$('#uploadalbum').val('');
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li class="active"><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+						<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+						<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+						<li><a href="login.html" class="nav-noneuser">登录</a></li>
+						<li><a href="reg.html" class="nav-noneuser">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container-sm box musicupload-box">
+			<div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+			<div class="info-box">
+				<div class="info-item">
+				    <label class="label-name" >歌曲名称：</label>
+				    <div >
+				        <input type="text" class="name-input" name=musicname id="musicname" placeholder="请输入歌曲名称">
+				    </div>
+					</div>
+					<div class="info-item">
+					    <label class="label-name" >歌曲介绍：</label>
+					    <div >
+					        <textarea name=musicintro placeholder="歌曲介绍" id="musicintro"></textarea>
+					    </div>
+					</div>
+					<div class="info-item">
+							<label class="label-name" >歌曲类型：</label>
+						<div >
+						<select id="musictype" name="musictype">
+							<option id="choosemutype"value="-1">请选择类型</option> 
+							<option id="chooserap"value="1">说唱</option>
+							<option id="choosepop"value="2">流行</option>
+							<option id="chooserock"value="3">摇滚</option>
+							<option id="choosefolk"value="4">民谣</option>
+							<option id="chooseedm"value="5">电子</option>
+						</select>
+						</div>
+						</div>
+					<div class="info-item">
+					    <label class="label-name" >选择专辑：</label>
+					<div >
+					<select id="album" name="album">
+        　　　　　　　　<option id="choosealbum"value="-1">请选择专辑</option>
+						<option value="1" >流行</option>
+						<option value="2" >说唱</option>
+					</select>
+						<button type="button" class="newalbumbtn button button-block button-rounded button-small">新建专辑</button>
+						<button type="button" class="deletealbum button button-block button-rounded button-small">删除专辑</button>
+					</div>
+					</div>
+			</div>
+			<div class="upload-area">
+			<div class="musicupload">
+				<div>
+					<div class="upload-btn">
+					<input type="file" name="music" id="uploadmusic" accept="audio/*" />
+					<button type="button" class="btn2 button button-block button-rounded button-small">上传歌曲</button>
+                    <span class="music-resourse"></span>
+					</div>
+					<span class="tip" style="display:none;" id="musictime" ></span>
+					<span class="tip">支持多种格式的音频文件格式</span>
+				</div>
+			</div>
+			<div class="musicpicupload">
+				<div>
+					<div>
+					<input type="file" name="musicpic" id="uploadmusicpic" accept="image/*" />
+					<button type="button" class="btn2 button button-block button-rounded button-small">上传歌曲封面</button>
+						<span class="musicpic-resourse"></span>
+					</div>
+					<span class="tip">选择图片上传</span>
+				</div>
+			</div>
+			<div class="mvupload">
+				<div>
+					<div>
+						<input type="file" name="mv" id="uploadmv" accept="video/*" />
+						<button type="button"class="btn2 button button-block button-rounded button-small">上传MV</button>
+						<span class="mv-resourse"></span>
+					</div>
+					<span class="tip">选择视频文件上传</span>
+				</div>
+			</div>
+			</div>
+			<button type="button" id="submit" class="submitbtn button button-block button-rounded button-normal">提交</button>
+		</div>
+		<div class="container-sm box newalbum-box">
+			<div class="info-box">
+				<div class="info-item">
+					<label class="label-name" >专辑名称：</label>
+					<div >
+						<input type="text" class="name-input" name=albumname id="albumname" placeholder="请输入专辑名称">
+					</div>
+				</div>
+				<div class="info-item">
+					<label class="label-name" >专辑介绍：</label>
+					<div >
+						<textarea name=albumintro id="albumintro" placeholder="专辑介绍"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="upload-area">
+				<div class="albumpicupload">
+					<div>
+						<div>
+							<input type="file" name="albumpic" id="uploadalbum" accept="image/*" />
+							<button type="button" class="btn2 button button-block button-rounded button-small">上传专辑封面</button>
+						</div>
+						<span class="tip">选择图片上传</span>
+					</div>
+				</div>
+			</div>
+			<button type="button" id="albumsubmit" class="albumbtn button button-block button-rounded button-normal">提交</button>
+		</div>
+	</body>
+	<!-- 底部版权 -->
+	<footer>
+		<div class="container">
+			<div class="copyright">
+				<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
+</html>

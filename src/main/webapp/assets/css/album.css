@@ -1,0 +1,237 @@
+.alert {
+    display:none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 200px;
+    /*margin-left: -100px;*/
+    z-index: 99999;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-success {
+    color: #FFFFFF;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.album-pic{
+    width: 190px;
+    height:190px;
+    overflow: hidden;
+    position: relative;
+    margin: 50px 0 0 50px;
+    float: left;
+}
+
+.album-information{
+    margin: 50px 0 0 30px;
+    height: 190px;
+    width: 700px;
+    float: left;
+}
+.name-span{
+    width: 70px;
+    height:30px;
+    float: left;
+    margin-right: 10px;
+    font-size: 18px;
+    color:white;
+    text-align: center;
+    background-color:#CF1717;
+    border-radius: 7px;
+
+}
+.album-name {
+    float: left;
+    height: 30px;
+    font-size: 20px;
+    color:#333333 ;
+}
+.singer-span{
+    text-align: left;
+    height: 30px;
+    width: 30px;
+    float: left;
+    clear: both;
+    font-size: 12px;
+    color:#666666;
+}
+.singer-name{
+    float: left;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 1px;
+    color:#0C73C2;
+}
+.publish-span{
+    text-align: left;
+    height: 30px;
+    width: 55px;
+    float: left;
+    clear: both;
+    font-size: 12px;
+    color:#666666;
+}
+.release-time{
+    float: left;
+    height: 30px;
+    font-size: 10px;
+    margin-left: 1px;
+    font-size: 12px;
+    color:#666666;
+}
+.inroduction-span{
+    text-align: left;
+    height: 30px;
+    width: 55px;
+    margin: 0 1px 0 0;
+    float: left;
+    clear: both;
+    font-size: 12px;
+    color:#666666;
+}
+.album-introduction{
+    height: 30px;
+    width: 620px;
+    font-size: 12px;
+    margin-left: 1px;
+    float: left;
+    color:#666666;
+}
+
+.find-msg{
+    font-size: 14px;
+    clear: both;
+    float: left;
+    margin: 30px 20px 0 50px;
+}
+.album-number{
+color: #B72712;
+
+}
+.album-nav{
+    color: #B72712;
+    height: 35px;
+    border-top: 2px solid #B72712;
+    background-color:#f5f5f5;
+    clear: both;
+    float: left;
+    margin: 5px 20px 0 50px;
+    width: 900px;
+    height: 37px;
+}
+.song-title{
+    width: 60%;
+    float: left;
+    height: 35px;
+    padding-top:3px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-right: 2px solid #B72712;
+}
+.singer{
+    width: 25%;
+    float: left;
+    height: 35px;
+    padding-top:3px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-right: 2px solid #B72712;
+}
+.duration{
+    width: 11%;
+    float: left;
+    height: 35px;
+    padding-top:3px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.album-songs{
+    margin: 5px 20px 0 50px;
+    width: 900px;
+    clear: both;
+}
+
+.songs-nav{
+    float: left;
+    width:900px;
+    line-height: 35px;
+}
+
+.song-name{
+    font-size: 13px;
+    width: 40%;
+    height: 35px;
+    float: left;
+    padding-left: 10px;
+}
+
+.songs-nav:hover{
+    border: 1px solid #808080;
+    background-color:#a9a9a9;
+}
+
+.song-button{
+    width: 20%;
+    height: 35px;
+    float: left;
+}
+
+#buttons{
+    display: none;
+}
+
+.iconbtn{
+    background-color:#a9a9a9;
+    border: #a9a9a9;
+}
+
+
+.song-singer{
+    font-size: 12px;
+    width: 25%;
+    height: 35px;
+    float: left;
+    padding-left: 10px;
+}
+
+.song-time{
+    font-size: 12px;
+    width: 11%;
+    height: 35px;
+    float: left;
+    padding-left:14px;
+}
+.pages{
+    text-align: center;
+    margin-top: 120px;
+}
+.pages p{
+    font-size: 13px;
+    font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    color: #666666;
+    text-align: center;
+    clear: both;
+}
+

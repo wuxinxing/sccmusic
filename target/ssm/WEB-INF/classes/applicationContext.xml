@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+    <!--组件扫描-->
+    <context:component-scan base-package="jxnu.edu.cn">
+        <!--排除controller扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!--加载jdbc-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--配置数据源对象-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.username}"/>
+    </bean>
+    <!--配置jdbcTemplate对象-->
+   <!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>-->
+   <!-- <bean id="testDao" class="jxnu.edu.cn.dao.impl.ImpltestDao"></bean>
+    <bean id="testService" class="jxnu.edu.cn.service.impl.ImpltestService">
+        <property name="testDao" ref="testDao"/>
+    </bean>-->
+
+    <!--配置sessionFactory-->
+    <bean id="sqlsessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis核心文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig-spring.xml"/>
+    </bean>
+    <!--扫描mapper所在的包 为mapper创建实现类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="jxnu.edu.cn.dao"/>
+    </bean>
+
+    <!--声明式事务控制-->
+    <!--平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--配置事务增强-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--事务的aop织入-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* jxnu.edu.cn.service.impl.*.*(..))"></aop:advisor>
+    </aop:config>
+</beans>

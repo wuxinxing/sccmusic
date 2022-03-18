@@ -1,0 +1,122 @@
+.headimg {
+	width: 180px;
+	height: 180px;
+	margin-top: 30px;
+	margin-left: 30px;
+	border: 1px solid #B2B2B2;
+	float: left;
+}
+.headimg img{
+	width: 180px;
+	height: 180px;
+	
+}
+.my-info .btn1{
+	margin-right: 100px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	float: right;
+	color: #000000;
+	font-weight: 500;
+}
+.my-info {
+	padding: 10px;
+	border-bottom: 2px solid #dddddd;
+}
+.my-list {
+	margin-top: 10px ;
+}
+.my-list .list-content {
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+}
+.my-current{
+	float: left;
+	width: 70px;
+	height: 50px;
+	border-left:1px solid white;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	text-align: center;
+}
+.my-fans {
+	float: left;
+	width: 70px;
+	height: 50px;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	border-left: 1px solid #dddddd;
+	text-align: center;
+}
+.my-follow {
+	float: left;
+	width: 70px;
+	height: 50px;
+	font-size: 20px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+	border-left: 1px solid #dddddd;
+	text-align: center;
+}
+.my-list > li> a:hover > div,.my-list > li> a:hover > div >span{
+	color: #4baaff;
+}
+.my-intro {
+	margin-top:10px ;
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+}
+.my-thing {
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 60px;
+}
+.my-content-box{
+	margin-left: 470px;
+	width: 700px;
+}
+#my_nickname {
+	font-size: 25px;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+}
+#my_sex {
+	font-size: 20px;
+	font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	margin-left: 20px;
+}
+.my-content {
+	margin-top: 40px;
+	margin-left: 260px;
+}
+.my-music {
+	padding-left: 25px;
+}
+.played-info {
+	font-size: 13px;
+	font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	color: #666666;
+}
+.alert {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 200px;
+	/*margin-left: -100px;*/
+	z-index: 99999;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.alert-success {
+	color: #FFFFFF;
+	background-color: #333333;
+	border-color: #333333;
+}

@@ -1,0 +1,239 @@
+/* Music Page */
+
+.player-wrap {
+	padding: 0;
+	box-shadow: 0 3px 10px -3px rgba(0, 0, 0, .08);
+	overflow: hidden;
+	margin-top: 30px;
+	height: 66px;
+	border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, .14);
+}
+
+.box {
+	margin-top: 24px;
+}
+.opicon{
+	float: right;
+}
+.iconbtn{
+	background-color: white;
+	border: white;
+}
+.collecticon:hover,.collectedicon:hover,.addicon:hover,.downloadicon:hover{
+	color: rgb(0,161,214);
+	cursor:pointer;
+}
+.deleteicon:hover{
+	color: red;
+	cursor:pointer;
+}
+#music-player {
+	margin: 0;
+	background-color: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fff, #fafafa);
+	background-image: linear-gradient(180deg, #fff, #fafafa);
+	box-shadow: none;
+}
+.comment{
+	border-top: 1px solid rgb(229,233,239);
+}
+.comment-span{
+	font-size: 15px;
+	color: #6D757A;
+	margin-left: 10px;
+}
+.comment-send{
+	margin-top: 50px;
+	height: 70px;
+	margin-bottom: 10px;
+}
+.content{
+	min-height: 500px;
+}
+.comment-send .user-face img{
+	width: 60px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 15px;
+	margin-top: 5px;
+}
+.comment-send textarea{
+	resize: none;
+	outline: none;
+	float: left;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+.comment-send .comment-submit{
+	margin-left: 20px;
+	height: 70px;
+	width: 90px;
+	float: left;
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	border-radius: 5px;
+	background-color: #55aaff;
+}
+.reply-send{
+	margin-top: 50px;
+	height: 70px;
+}
+.reply-send .user-face .img{
+	width: 30px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 15px;
+	margin-top: 5px;
+}
+.reply-send textarea{
+	resize: none;
+	outline: none;
+	float: left;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+.reply-send .reply-submit{
+	margin-left: 20px;
+	/*margin-top: 10px;*/
+	height: 50px;
+	width: 90px;
+	float: left;
+	font-size: 12px;
+	color: #000000;
+	font-weight: 500;
+	border-radius: 5px;
+	background-color: #55aaff;
+}
+.comment-list{
+	margin-top: 10px;
+}
+.list-item{
+	border-top: 1px solid rgb(229,233,239);
+	padding-top: 20px;
+}
+.list-item .user-face a{
+	width: 30px;
+}
+.list-item .user-face img{
+	width: 60px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 15px;
+	margin-top: 5px;
+}
+.con .user a{
+	color: #6D757A;
+}
+.con p{
+	font-size: 15px;
+	margin-left: 75px;
+}
+.con >.info{
+	margin-top: -30px;
+	margin-left: 75px;
+}
+.info >span{
+	margin-right: 20px;
+}
+.info >.time{
+	font-size: 10px;
+	color: #99A2AA;
+}
+.info .likeicon{
+	font-size: 17px;
+}
+.info .comment-like{
+	font-size: 10px;
+	color: #99A2AA;
+}
+.info .comment-like:hover{
+	cursor:pointer;
+}
+.info .comment-liked{
+	font-size: 10px;
+	color: #00a1d6;
+}
+.info .comment-liked:hover{
+	cursor:pointer;
+}
+.info .comment-like:hover .icon{
+	color: rgb(0,161,214);
+}
+.info .reply{
+	font-size: 10px;
+	color: #99A2AA;
+}
+.info .reply:hover{
+	font-size: 10px;
+	color: rgb(0,161,214);
+	cursor:pointer;
+}
+.info .delete{
+	font-size: 10px;
+	color: #99A2AA;
+}
+.info .delete:hover{
+	font-size: 10px;
+	color: rgb(255, 0, 0);
+	cursor:pointer;
+}
+.reply-box{
+	margin-top: 5px;
+	margin-left: 50px;
+}
+.reply-box .reply-item a{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.reply-box .reply-item img{
+	width: 30px;
+	border-radius: 50px;
+}
+.reply-item >.info{
+	margin-left: 50px;
+	margin-top: -30px;
+}
+.reply-item p{
+	font-size: 15px;
+	margin-left: 50px;
+}
+.alert {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 200px;
+	/*margin-left: -100px;*/
+	z-index: 99999;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+}
+
+.alert-success {
+	color: #FFFFFF;
+	background-color: #333333;
+	border-color: #333333;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}

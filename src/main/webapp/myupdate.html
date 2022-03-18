@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/buttons.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/myupdate.css"/>
+		<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/district.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/admin/addinformation.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="assets/js/myprofile.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			function  uploadimg(c, d) {
+				"use strict";
+				var $c = document.querySelector(c),
+						$d = document.querySelector(d),
+						file = $c.files[0],
+						reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onload = function (e) {
+					$d.setAttribute("src", e.target.result);
+				};
+			};
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				$('#pwd-btn').click(function(){
+					$('#info').css("display","none");
+					$('#pwd').css("display","block");
+					$('#head').css("display","none");
+					$('#pwd-btn').addClass("active");
+					$('#info-btn').removeClass("active");
+					$('#headimg-btn').removeClass("active");
+				})
+				$('#info-btn').click(function(){
+					$('#pwd').css("display","none");
+					$('#info').css("display","block");
+					$('#head').css("display","none");
+					$('#pwd-btn').removeClass("active");
+					$('#info-btn').addClass("active");
+					$('#headimg-btn').removeClass("active");
+				})
+				$('#headimg-btn').click(function(){
+					$('#head').css("display","block");
+					$('#info').css("display","none");
+					$('#pwd').css("display","none");
+					$('#pwd-btn').removeClass("active");
+					$('#info-btn').removeClass("active");
+					$('#headimg-btn').addClass("active");
+				})
+			})
+		</script>
+		</head>
+	<body>
+		<!-- 导航栏 -->
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li><a href="musicupload.html">上传</a></li>
+						<li class="active"><a href="my.html">个人中心</a></li>
+						<li><a href="#" class="nav-user" style="display: none"><img src="user-images/109951163326451516.jpg" class="nav-userface"></a> </li>
+						<li><a href="javascript:void (0);" class="nav-user logout" id="logout" style="display: none">退出</a></li>
+						<li><a href="login.html" class="nav-noneuser">登录</a></li>
+						<li><a href="reg.html" class="nav-noneuser">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container-sm box">
+			<div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+			<div class="my-nav">
+			<ul class="info-nav">
+				<li class="active" id="info-btn"><a href="#">基本资料</a></li>
+				<li id="headimg-btn"><a href="#">上传头像</a></li>
+				<li id="pwd-btn"><a href="#">修改密码</a></li>
+			</ul>	
+			</div>
+			<div class="info-box" id="info">
+				<form action="" method="post">
+				<div class="info-upbox">
+				<div class="info-item">
+				    <label class="label-name" >昵称：</label>
+				    <div >
+				        <input type="text" class="name-input" id="update_nickname" placeholder="请输入你的昵称">
+				    </div>
+				</div>
+				<div class="info-item">
+				    <label class="label-name" >介绍：</label>
+				    <div >
+				        <textarea placeholder="介绍一下自己" id="introduce"></textarea>
+				    </div>
+				</div>
+				<div class="info-item">
+				    <label class="label-name" >性别：</label>
+				    <div id="gender">
+				        <label>
+				            <input type="radio" value="男" name="gender" >男</label>
+				        <label>
+				            <input type="radio" name="gender" value="女">女</label>
+				    </div>
+				</div>
+				<div class="info-item">
+				    <label class="label-name" >生日：</label>
+				    <div >
+				        <input type="date" value="2001-03-18" id="birthday">
+				    </div>
+				</div>
+				</div>
+				<div class="disrickt-item">
+				    <label class="label-name" >地区：</label>
+				    <div >
+					<select id="province" name="province" onchange="doProvAndCityRelation();">
+        　　　　　　　　<option id="choosePro"value="-1">省份</option>
+					</select>
+					<select id="citys" name="city" onchange="doCityAndCountyRelation();">
+		       　　　　<option id='chooseCity' value='-1'>城市</option>
+					</select>
+					<select id="county" name="county">
+			          <option id='chooseCounty' value='-1'>所在区/县</option>
+					</select>
+				    </div>
+				</div>	
+				<button type="button" id="infosubmit" class="btn1 button button-block button-rounded button-normal">保存</button>
+				</form>
+			</div>
+				<div class="headimg-box" id="head" style="display: none;">
+					<div class="headimgbtn-area">
+						<form action="" method="post" enctype="multipart/form-data">
+							<input type="file" name="headimg" id="uploadheadimg" accept="image/*" onchange="uploadimg('#uploadheadimg','#img-head');" value=""/>
+						</form>
+					<button type="button" class="headimg-uploadbtn button">
+						选择头像
+					</button>
+					</div>
+					<span class="up-tips">
+						支持jpg、png、bmp格式的图片
+					</span>
+					<div class="uparea-left">
+						<img src="user-images/headimgupload.png" id="img-head">
+					</div>
+					<div class="uparea-right">
+						<span class="headprevietip">
+							头像预览
+						</span>
+						<br>
+						<img src="user-images/109951163326451516.jpg" id="img-head1">
+					</div>
+						<button type="button" id="headimgsubmit" class="head-btn button button-block button-rounded button-normal">提交</button>
+				</div>
+			<div class="pwd-box" id="pwd" style="display: none;">
+					<form action="" method="post" id="pwd-form">
+					<div class="pwd-item">
+					    <label class="label-name" >旧密码：</label>
+						<input class="old_password" type="password" name="old_password" id="old_password"/>
+						<span id="old_pwdMsg"></span>
+					</div>
+					<div class="pwd-item">
+					    <label class="label-name" >新密码：</label>
+						<input class="new_password" type="password" name="new_password" id="new_password"/>
+						<span id="new_pwdMsg"></span>
+					</div>
+					<div class="pwd-item">
+					    <label class="label-name" >确认密码：</label>
+						<input class="con_new_password" type="password" name="con_new_password" id="con_new_password"/>
+						<span id="con_new_pwdMsg"></span>
+					</div>
+					<button type="button" id="newpwdsubmit" class="btn1 button button-block button-rounded button-normal">提交</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 底部版权 -->
+		<footer>
+			<div class="container">
+				<div class="copyright">
+					<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+		<!-- JS 脚本 -->
+		<script src="assets/js/common.js"></script>
+	</body>
+</html>

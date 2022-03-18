@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="jxnu.edu.cn.dao.CommentDao">
+    <resultMap id="commentMap" type="commentdomain">
+        <id property="commentId" column="commentId"></id>
+        <result property="commentUserId" column="commentUserId"></result>
+        <result property="commentTouserId" column="commentTouserId"></result>
+        <result property="commentTime" column="commentTime"></result>
+        <result property="commentText" column="commentText"></result>
+        <result property="commentMusicId" column="commentMusicId"></result>
+        <result property="commentDynamicId" column="commentDynamicId"></result>
+        <result property="likeTimes" column="likeTimes"></result>
+        <result property="tocommentId" column="tocommentId"></result>
+        <association property="userDomain" javaType="userDomain">
+            <result property="nickname" column="nickname"></result>
+            <result property="headImage" column="headImage"></result>
+        </association>
+    </resultMap>
+
+    <insert id="insertcomment" parameterType="commentdomain" useGeneratedKeys="true" keyProperty="commentId">
+        insert into comment(commentUserId,commentTime,commentText,commentMusicId) values(#{commentUserId},#{commentTime},#{commentText},#{commentMusicId})
+    </insert>
+    <insert id="insertreply" parameterType="commentdomain" useGeneratedKeys="true" keyProperty="commentId">
+        insert into comment(tocommentId,commentTime,commentUserId,commentTouserId,commentText,commentMusicId)
+        values(#{tocommentId},#{commentTime},#{commentUserId},#{commentTouserId},#{commentText},#{commentMusicId})
+    </insert>
+    <select id="queryCommentByMusicId" parameterType="long" resultMap="commentMap">
+        select * from comment_view where commentMusicId=#{musicId} and tocommentId is null order by commentTime asc
+    </select>
+    <select id="queryReplyByCommentId" parameterType="long" resultMap="commentMap">
+        select * from comment_view where tocommentId=#{commentId} and tocommentId is not null order by commentTime asc
+    </select>
+    <delete id="deleteCommentByCommentId" parameterType="long">
+        delete from comment where commentId=#{commentId}
+    </delete>
+    <insert id="insertLike" parameterType="likeDomain" useGeneratedKeys="true" keyProperty="likeId">
+        INSERT INTO `like`(musicId,commentId,userId,likeTime) VALUES(#{musicId},#{commentId},#{userId},#{likeTime})
+    </insert>
+    <delete id="deleteLike">
+        DELETE from `like` WHERE commentId=#{commentId} and userId=#{userId}
+    </delete>
+    <update id="updateAddCommentLikeTimes" parameterType="long">
+        update comment set likeTimes=likeTimes+1 where commentId=#{commentId}
+    </update>
+    <update id="updateMinusCommentLikeTimes" parameterType="long">
+        update comment set likeTimes=likeTimes-1 where commentId=#{commentId}
+    </update>
+    <select id="queryLikeTimesByCommentId" resultType="int" parameterType="long">
+        select likeTimes from comment where commentId=#{commentId}
+    </select>
+    <select id="queryLikeByMusicId" resultType="likedomain">
+        select * from `like` where userId=#{userId} and musicId=#{musicId}
+    </select>
+
+</mapper>     
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>SccMusic </title>
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="favicon.ico" mce_href="http://jt.hapboy.xyz/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/common.css">
+		<link rel="stylesheet" href="assets/css/slider.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/buttons.css">
+		<script src="assets/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/user/register.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/admin.js" type="text/javascript" charset="UTF-8"></script>
+		<style type="text/css">
+
+			.logo{ 
+				width: 100px;
+				margin-left: 300px;
+				margin-bottom: 50px;
+			}
+			.logo img{
+				width: 100px;
+			}
+			.reg-box{
+				border-radius: 5px;
+				background-color: white;
+				margin-top: 50px;
+				margin-bottom: 100px;
+				margin-left: 32%;
+				padding-top: 50px;
+				height: 550px;
+				width: 700px;
+			}
+			.reg-item{
+				margin-top:10px;
+				margin-left: 200px;
+			}
+			.reg-item input{
+				border-radius: 3px;
+				height: 25px;
+				border: 1px solid #cdcdcd;
+				outline: none;
+			}
+			.reg-item img{
+				width: 150px;
+				height: 40px;
+				margin-left: 60px;
+			}
+			.username{
+				margin-left: 15px;
+			}
+			.password{
+				margin-left: 30px;
+			}
+			.email{
+				margin-left: 30px;
+			}
+			.checkcode{
+				margin-left: 15px;
+			}
+			.label-name{
+				font-size: 15px;
+				font-family:'Montserrat', 'Helvetica', 'Arial', sans-serif;
+				color: #333333;
+			}
+			.btn1{
+				margin-top: 30px;
+				margin-left: 300px;
+				color: #000000;
+				background-color:  #d1d1d1;
+				border: 1px #cccccc solid;
+			}
+			.tip{
+				position: absolute;
+				margin-top: 10px;
+				margin-left: 300px;
+				font-size: 13px;
+			}
+			.alert {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				min-width: 200px;
+				/*margin-left: -100px;*/
+				z-index: 99999;
+				padding: 15px;
+				border: 1px solid transparent;
+				border-radius: 4px;
+				text-align: center;
+			}
+
+			.alert-success {
+				color: #FFFFFF;
+				background-color: #333333;
+				border-color: #333333;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 导航栏 -->
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="assets/images/logo.png" alt="">
+					</a>
+				</div>
+				<nav>
+					<ul class="nav navbar-nav navbar-link">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="mymusic.html">我的音乐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right navbar-sm">
+						<li><input type="text" class="search-input" placeholder="歌名 / 歌手"></li>
+						<li><a href="javascript:void (0)"><i class="fa fa-search" id="search" aria-hidden="true"></i></a></li>
+						<li><a href="musicupload.html">上传</a></li>
+						<li><a href="my.html">个人中心</a></li>
+						<li><a href="login.html">登录</a></li>
+						<li class="active"><a href="reg.html">注册</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+			<div class="reg-box">
+				<div class="alert" style="height:50px;line-height:50px;font-size:14px;width:70px;margin:auto;position:fixed;z-index: 99999;top:0;left:0;bottom:0;right:0;"></div>
+				<div class="logo">
+					<img src="assets/images/logo.png" >
+				</div>
+				<form action="#" method="post">
+					
+					        <div class="reg-item">
+							<label class="label-name">用户名：</label>
+					        <input class="username" name="username" id="username" type="text"/>
+								<span id="nameMsg"></span>
+					        </div>
+							<div class="reg-item">
+							<label class="label-name">密码：</label>
+							<input class="password" name="password" id="pwd" type="password"   />
+								<span id="pwdMsg"></span>
+					        </div>
+							<div class="reg-item">
+							<label class="label-name">确认密码：</label>
+							<input class="con-password" name="con-password" id="repwd" type="password"   />
+								<span id="conpwdMsg"></span>
+							</div>
+							<div class="reg-item">
+							<label class="label-name">邮箱：</label>
+							<input class="email" name="email" id="email" type="text"/>
+								<span id="EmailMsg"></span>
+							</div>
+					        <div class="reg-item">
+							<label class="label-name">验证码：</label>
+							<input class="checkcode" id="j_captcha" name="checkcode" type="text" />
+					        </div>
+							<div class="reg-item">
+								<img  id="captcha_img" onclick="changeVerifyCode(this)" src="/Kaptcha">
+							 </div>
+					<button type="button" id="submit" class="btn1 button button-block button-rounded button-normal">注册</button>
+					<div class="tip">
+					<a href="login.html">已有账号？去登录</a>
+					</div>
+				</form>
+			</div>
+		<!-- 底部版权 -->
+		<footer>
+			<div class="container">
+				<div class="copyright">
+					<p align="center">Copyright © <span class="update-year">2021</span> SCC - All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
